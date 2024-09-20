@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parameter test Suite" verbose="1">
+
+    <test name="Parameter Test">
+        <parameter name="input" value="" />
+        <parameter name="result" value="" />
+
+        <classes>
+            <class name="task_8.Task8Test">
+                <methods>
+                    <include name="IsWeekendWithParameterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
