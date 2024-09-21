@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parameter test Suite" verbose="1">
+
+    <test name="IsWeekendWithParameterTest">
+        <parameter name="input" value="MONDAY" />
+        <parameter name="result" value="false" />
+
+        <classes>
+            <class name="task_8.Task8Test">
+                <methods>
+                    <include name="IsWeekendWithParameterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DaysUntilWeekendWithParameterTest">
+        <parameter name="input" value="MONDAY" />
+        <parameter name="result" value="5" />
+
+        <classes>
+            <class name="task_8.Task8Test">
+                <methods>
+                    <include name="DaysUntilWeekendWithParameterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GetNextDayWithParameterTest">
+        <parameter name="input" value="MONDAY" />
+        <parameter name="result" value="TUESDAY" />
+
+        <classes>
+            <class name="task_8.Task8Test">
+                <methods>
+                    <include name="GetNextDayWithParameterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
