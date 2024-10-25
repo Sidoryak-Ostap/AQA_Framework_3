@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import static task_11.DriverProvider.getDriver;
 
 public class WebBookPO {
-
-
     @FindBy(id = "searchBox")
     WebElement seacrhBox;
     @FindBy(id = "basic-addon2")
