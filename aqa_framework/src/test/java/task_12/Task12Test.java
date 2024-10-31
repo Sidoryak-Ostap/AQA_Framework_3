@@ -1,14 +1,25 @@
 package task_12;
 
+import com.automation.remarks.testng.UniversalVideoListener;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import task_13.MyExecutionListener;
+import task_13.MyTestListener;
 
+
+@Listeners({MyTestListener.class, MyExecutionListener.class, UniversalVideoListener.class})
 public class Task12Test {
 
 
     @Test
     void headersTest(){
         new StackOverflowBO().openStackOvAboutTab().verifyStackOvAboutHeader();
+    }
+
+    @Test
+    void negativeHeadersTest(){
+        new StackOverflowBO().verifyStackOvAboutHeader();
     }
 
     @AfterTest

@@ -1,0 +1,108 @@
+2024-10-28 22:12:48 INFO  MyTestListener - aqa_framework
+2024-10-28 22:12:48 INFO  MyExecutionListener - Default Suite
+2024-10-28 22:12:48 INFO  MyExecutionListener - Execution of test has finished
+2024-10-28 22:16:35 ERROR MyTestListener - negativeHeadersTest
+java.lang.NullPointerException: Cannot invoke "task_12.StackOverflowPO.getAboutHeader()" because "this.homePage" is null
+2024-10-28 22:16:36 INFO  MyTestListener - aqa_framework
+2024-10-28 22:16:36 INFO  MyExecutionListener - Default Suite
+2024-10-28 22:16:37 INFO  MyExecutionListener - Execution of test has finished
+2024-10-28 22:18:58 ERROR MyTestListener - negativeHeadersTest
+java.lang.NullPointerException: Cannot invoke "task_12.StackOverflowPO.getAboutHeader()" because "this.homePage" is null
+2024-10-28 22:19:00 INFO  MyTestListener - aqa_framework [ResultMap map=[[TestResult name=negativeHeadersTest status=FAILURE method=Task12Test.negativeHeadersTest()[pri:0, instance:task_12.Task12Test@3967e60c] output={null}]]]
+2024-10-28 22:19:00 INFO  MyExecutionListener - Default Suite
+2024-10-28 22:19:00 INFO  MyExecutionListener - Execution of test has finished
+2024-10-28 22:20:23 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-28 22:20:23 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:20:23 INFO  MyExecutionListener.onExecutionFinish - Execution of test has finished
+2024-10-28 22:26:37 ERROR MyTestListener.onTestFailure - negativeHeadersTest
+java.lang.NullPointerException: Cannot invoke "task_12.StackOverflowPO.getAboutHeader()" because "this.homePage" is null
+2024-10-28 22:26:39 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeHeadersTest status=FAILURE method=Task12Test.negativeHeadersTest()[pri:0, instance:task_12.Task12Test@550dbc7a] output={null}]]]
+2024-10-28 22:26:39 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:26:39 INFO  MyExecutionListener.onExecutionFinish - Execution of test has finished
+2024-10-28 22:31:57 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-28 22:31:57 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:34:15 ERROR MyTestListener.onTestFailure - negativeHeadersTest
+java.lang.NullPointerException: Cannot invoke "task_12.StackOverflowPO.getAboutHeader()" because "this.homePage" is null
+2024-10-28 22:34:16 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeHeadersTest status=FAILURE method=Task12Test.negativeHeadersTest()[pri:0, instance:task_12.Task12Test@4b14c583] output={null}]]]
+2024-10-28 22:34:16 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:34:16 INFO  MyExecutionListener.onExecutionFinish - Execution of test has finished
+2024-10-28 22:35:34 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-28 22:35:34 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:35:34 INFO  MyExecutionListener.onExecutionFinish - Execution of test has finished
+2024-10-28 22:53:54 ERROR MyTestListener.onTestFailure - negativeHeadersTest
+java.lang.NullPointerException: Cannot invoke "task_12.StackOverflowPO.getAboutHeader()" because "this.homePage" is null
+2024-10-28 22:53:55 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeHeadersTest status=FAILURE method=Task12Test.negativeHeadersTest()[pri:0, instance:task_12.Task12Test@3b152928] output={null}]]]
+2024-10-28 22:53:56 INFO  MyExecutionListener.onFinish - Default Suite
+2024-10-28 22:53:56 INFO  MyExecutionListener.onExecutionFinish - Execution of test has finished
+2024-10-29 10:13:26 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 10:20:41 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 10:22:08 ERROR MyTestListener.onTestFailure - negativeFindBook
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#see\-book\-Learning\ JavaScript\ Design\ Patterns"}
+  (Session info: chrome=130.0.6723.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [eb7313fb61b641e7d64e2f9cb6cde7fa, findElement {value=see-book-Learning JavaScript Design Patterns, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\asus\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59084}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59084/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: eb7313fb61b641e7d64e2f9cb6cde7fa
+2024-10-29 10:22:09 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@bcb09a6] output={null}]]]
+2024-10-29 10:35:15 ERROR MyTestListener.onTestFailure - negativeFindBook
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#see\-book\-Learning\ JavaScript\ Design\ Patterns"}
+  (Session info: chrome=130.0.6723.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [25e6c9a638dc922ee99de9a9fb08a4c7, findElement {value=see-book-Learning JavaScript Design Patterns, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\asus\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59611}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59611/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 25e6c9a638dc922ee99de9a9fb08a4c7
+2024-10-29 10:35:16 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@585c13de] output={null}]]]
+2024-10-29 10:44:43 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 10:45:59 ERROR MyTestListener.onTestFailure - negativeFindBook
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#see\-book\-Learning\ JavaScript\ Design\ Patterns"}
+  (Session info: chrome=130.0.6723.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3ca1e9a0640a5cf28b49afd8a69008ff, findElement {using=id, value=see-book-Learning JavaScript Design Patterns}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\asus\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60482}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60482/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ca1e9a0640a5cf28b49afd8a69008ff
+2024-10-29 10:45:59 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@25c5e994] output={null}]]]
+2024-10-29 10:54:13 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 10:55:23 ERROR MyTestListener.onTestFailure - negativeFindBook
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#see\-book\-Learning\ JavaScript\ Design\ Patterns"}
+  (Session info: chrome=130.0.6723.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5d8165ce5315bb30d8e4f3b0e5868916, findElement {value=see-book-Learning JavaScript Design Patterns, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\asus\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62352}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62352/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5d8165ce5315bb30d8e4f3b0e5868916
+2024-10-29 10:55:23 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@63429932] output={null}]]]
+2024-10-29 10:56:50 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: null
+2024-10-29 10:56:50 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@732bb66d] output={null}]]]
+2024-10-29 11:00:33 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: negative Find Book failed
+2024-10-29 11:00:33 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@6ad11a56] output={null}]]]
+2024-10-29 11:02:01 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 20:03:35 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@7ce9e05a] output={null}]]]
+2024-10-29 20:05:50 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 20:07:06 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 20:09:10 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[]]
+2024-10-29 20:10:14 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: negative Find Book failed
+2024-10-29 20:10:15 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@60baef24] output={null}]]]
+2024-10-29 20:11:33 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@710d7aff] output={null}]]]
+2024-10-29 20:27:16 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: negative Find Book failed
+2024-10-29 20:27:16 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@15723761] output={null}]]]
+2024-10-29 20:32:00 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: null
+2024-10-29 20:32:00 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@6d367020] output={null}]]]
+2024-10-29 20:34:00 ERROR MyTestListener.onTestFailure - negativeFindBook
+java.lang.AssertionError: null
+2024-10-29 20:34:01 INFO  MyTestListener.onFinish - aqa_framework [ResultMap map=[[TestResult name=negativeFindBook status=FAILURE method=Task11Test.negativeFindBook()[pri:0, instance:task_11.Task11Test@720653c2] output={null}]]]

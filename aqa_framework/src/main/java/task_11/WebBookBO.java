@@ -2,6 +2,7 @@ package task_11;
 
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 
 public class WebBookBO {
@@ -30,9 +31,7 @@ public class WebBookBO {
     }
 
     public WebBookBO verifyResult() {
-        if(webBookPO.getFoundBook().isDisplayed()) {
-            System.out.println("Book was found with text" + " " + webBookPO.getFoundBook().getText());
-        }
+        Assert.assertTrue(webBookPO.getFoundBook().isDisplayed());
         return this;
 
     }
