@@ -93,6 +93,13 @@
             <version>${aspectj.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
+
 
     </dependencies>
 
