@@ -1,167 +1,130 @@
 package task_16;
 
-import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.io.IOException;
 
 public class Task16CustomTest {
 
+    @Test
+    void compareCreateOrganizationTest() throws IOException, InterruptedException {
+        String displayName = "TestName";
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        OrganizationTemplate organizationReceived = task16CustomBO.createOrganization(displayName);
 
-    private static final String KEY = "";
-    private static final String TOKEN = "";
-    private static HttpClient client;
+        System.out.println(organizationReceived);
+        OrganizationTemplate organizationExpected = new OrganizationTemplate();
 
-    String organizationId;
-    String boardId;
-    String listId;
-    String cardId;
+        organizationExpected.setDisplayName(displayName);
+        organizationExpected.setOffering("trello.free");
+        organizationExpected.setIdMemberCreator("654a26a8740d9459cb69f952");
 
-    @BeforeTest
-    public static void setup() {
-        client = HttpClient.newHttpClient();
+        Assert.assertEquals(organizationReceived, organizationExpected, "Bad response body");
     }
 
     @Test
-    void createOrganization(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/organizations?key=" + KEY + "&token=" + TOKEN + "&displayName=TestOrganizationName"))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.noBody())
-                    .build();
+    void compareCreateBoardTest() throws IOException, InterruptedException {
+        String organizationId = "67322cc18e4a209531afa76f";
+        String boardName = "TestBoardAQA";
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        BoardTemplate boardReceived = task16CustomBO.createBoard(organizationId);
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(boardReceived);
 
-            JSONObject jsonResponse = new JSONObject(response.body());
-            organizationId = jsonResponse.getString("id");
+        BoardTemplate boardExpected = new BoardTemplate();
+        boardExpected.setClosed(false);
+        boardExpected.setIdOrganization(organizationId);
+        boardExpected.setPined(false);
+        boardExpected.setName(boardName);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(boardReceived, boardExpected, "Bad response body");
+
+
     }
 
-    @Test(dependsOnMethods = {"createOrganization"})
-    void createBoard(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/boards?key=" + KEY + "&token=" + TOKEN + "&name=TestBoardAQA" + "&idOrganization=" + organizationId))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.noBody())
-                    .build();
+    @Test
+    void compareCreateListTest() throws  IOException, InterruptedException{
+        String boardId = "67322d3d23789718748edb8b";
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        ListTemplate listReceived = task16CustomBO.createList(boardId);
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println("Received list");
+        System.out.println(listReceived);
 
-            JSONObject jsonResponse = new JSONObject(response.body());
-            boardId = jsonResponse.getString("id");
+        ListTemplate listExpected = new ListTemplate();
+        listExpected.setIdBoard(boardId);
+        listExpected.setName("Todo");
+        listExpected.setClosed(false);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(listReceived, listExpected, "Bad response body");
+
+
     }
 
-    @Test(dependsOnMethods = {"createBoard"})
-    void createList(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/lists?key=" + KEY + "&token=" + TOKEN + "&name=Todo" + "&idBoard=" + boardId))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.noBody())
-                    .build();
+    @Test
+    void compareCreateCardTest() throws IOException, InterruptedException{
+        String listId = "67322e48e3db98267abe69e8";
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        CardTemplate cardReceived = task16CustomBO.createCard(listId);
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println("Received card");
+        System.out.println(cardReceived);
 
-            JSONObject jsonResponse = new JSONObject(response.body());
-            listId = jsonResponse.getString("id");
+        CardTemplate cardExpected = new CardTemplate();
+        cardExpected.setCheckItems(0);
+        cardExpected.setVotes(0);
+        cardExpected.setClosed(false);
+        cardExpected.setDescription(false);
+        cardExpected.setIdList(listId);
+        cardExpected.setDue(null);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(cardReceived, cardExpected, "Bad response body");
     }
 
-    @Test(dependsOnMethods = "createList")
-    void createCard(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/cards/?key=" + KEY + "&token=" + TOKEN + "&idList=" + listId))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.noBody())
-                    .build();
+    @Test
+    void compareUpdateDueData() throws  IOException, InterruptedException{
+        String listId = "67322e48e3db98267abe69e8";
+        String cardId = "673230ddab30897b608ee9cd";
+        String dueData = "2024-10-31T18:30:00Z";
+        String expectedDueData = "2024-10-31T18:30:00.000Z";
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        CardTemplate cardReceived = task16CustomBO.addDueData(dueData, cardId);
 
-            JSONObject jsonResponse = new JSONObject(response.body());
-            cardId = jsonResponse.getString("id");
+        System.out.println("Received card");
+        System.out.println(cardReceived);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        CardTemplate cardExpected = new CardTemplate();
+        cardExpected.setCheckItems(0);
+        cardExpected.setVotes(0);
+        cardExpected.setClosed(false);
+        cardExpected.setDescription(false);
+        cardExpected.setIdList(listId);
+        cardExpected.setDue(expectedDueData);
+
+        Assert.assertEquals(cardReceived, cardExpected, "Bad response body");
     }
 
-    @Test(dependsOnMethods = {"createCard"})
-    void addDueData(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/cards/" + cardId + "?key=" + KEY + "&token=" + TOKEN))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .PUT(HttpRequest.BodyPublishers.ofString("{\"due\": \"2024-10-31T18:30:00Z\"}"))
-                    .build();
+    @Test
+    void compareRemoveDueData() throws  IOException, InterruptedException{
+        String listId = "67322e48e3db98267abe69e8";
+        String cardId = "673230ddab30897b608ee9cd";
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            JSONObject jsonResponse = new JSONObject(response.body());
+        Task16CustomBO task16CustomBO = new Task16CustomBO();
+        CardTemplate cardReceived = task16CustomBO.removeDueData(cardId);
 
-            Assert.assertNotNull(jsonResponse.getString("badges.due"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println("Received card");
+        System.out.println(cardReceived);
+
+        CardTemplate cardExpected = new CardTemplate();
+        cardExpected.setCheckItems(0);
+        cardExpected.setVotes(0);
+        cardExpected.setClosed(false);
+        cardExpected.setDescription(false);
+        cardExpected.setIdList(listId);
+        cardExpected.setDue(null);
+
+        Assert.assertEquals(cardReceived, cardExpected, "Bad response body");
     }
-
-    @Test(dependsOnMethods = {"addDueData"})
-    void updateDueData(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/cards/" + cardId + "?key=" + KEY + "&token=" + TOKEN))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .PUT(HttpRequest.BodyPublishers.ofString("{\"due\": \"2024-11-05T14:20:00Z\"}"))
-                    .build();
-
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            JSONObject jsonResponse = new JSONObject(response.body());
-
-            Assert.assertEquals(jsonResponse.getString("badges.due"), "2024-11-05T14:20:00.000Z");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test(dependsOnMethods = {"updateDueData"})
-    void removeDueData(){
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.trello.com/1/cards/" + cardId + "?key=" + KEY + "&token=" + TOKEN))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .PUT(HttpRequest.BodyPublishers.ofString("{\"due\": \"\"}"))
-                    .build();
-
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            JSONObject jsonResponse = new JSONObject(response.body());
-
-            Assert.assertNull(jsonResponse.getString("badges.due"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }
