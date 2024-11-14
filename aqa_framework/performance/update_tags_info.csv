@@ -1,0 +1,9 @@
+tagId,userId,tagName,tagDescription
+1,1,TestTag1,TestTagDescription1,
+2,1,testTag6UpdatedTwice,testTag6UpdatedDescriptionTwice,
+3,8,testTag2,testTag2Description2,
+4,8,testTag3,testTag3Description3,
+5,10,testTag4,testTag4Description4,
+6,10,testTag5,testTag5Description5,
+7,8,testTag6,testTag6Description6,
+8,9,testTag7,testTag7Description7
